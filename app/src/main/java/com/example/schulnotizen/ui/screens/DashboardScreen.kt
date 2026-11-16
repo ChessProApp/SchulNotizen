@@ -374,18 +374,7 @@ fun DashboardScreen(
                 onDismiss = { showAddNoteDialog = false },
                 onSave = { title, subject, colorHex ->
                     showAddNoteDialog = false
-                    val newId = onCreateNote(title, subject, colorHex)
-                    // Direkt im Editor öffnen
-                    onOpenNote(
-                        NoteEntity(
-                            id = newId,
-                            title = title.ifBlank { "Unbenannte Notiz" },
-                            subject = subject,
-                            content = "",
-                            tabColorHex = colorHex,
-                            isOpenInTab = true
-                        )
-                    )
+                    onCreateNote(title, subject, colorHex)
                 }
             )
         }
